@@ -1,0 +1,12 @@
+{
+  "name": "miningbridge-intel",
+  "version": "1.0.0",
+  "description": "Critical-mineral and rare-earth trade intelligence: trade flows, supply-concentration risk, counterparty screening and sourcing briefs from MiningBridge.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "miningbridge": {
+      "httpUrl": "https://intel.miningbridge.in/api/mcp",
+      "timeout": 60000
+    }
+  }
+}
