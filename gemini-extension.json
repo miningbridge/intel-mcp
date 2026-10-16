@@ -1,7 +1,7 @@
 {
   "name": "miningbridge-intel",
   "version": "1.0.0",
-  "description": "Critical-mineral and rare-earth trade intelligence: trade flows, supply-concentration risk, counterparty screening and sourcing briefs from MiningBridge.",
+  "description": "Critical-mineral and rare-earth intelligence: trade flows, supply-concentration risk, counterparty screening, sourcing briefs and CM-PATRA patent and R&D tracking for India's critical minerals, from MiningBridge.",
   "contextFileName": "GEMINI.md",
   "mcpServers": {
     "miningbridge": {
