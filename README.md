@@ -2,12 +2,12 @@
 
 # MiningBridge Intelligence MCP server
 
-Critical-mineral and rare-earth trade intelligence for your AI assistant. You can ask about lithium, cobalt, nickel, rare earths (NdPr), graphite inputs, gallium and germanium, and battery scrap. It answers with trade flows, commodity snapshots, supply-concentration risk (including China exposure), counterparty screening, sourcing briefs, research reports and a sourced evidence base.
+Critical-mineral and rare-earth intelligence for your AI assistant. You can ask about lithium, cobalt, nickel, rare earths (NdPr), graphite inputs, gallium and germanium, and battery scrap. It answers with trade flows, commodity snapshots, supply-concentration risk (including China exposure), counterparty screening, sourcing briefs, research reports and a sourced evidence base. It also includes **CM-PATRA**, a patent and funded-R&D tracker for India's critical minerals.
 
 - **Endpoint:** `https://intel.miningbridge.in/api/mcp`
 - **Transport:** Streamable HTTP (MCP 2025-06-18). This is a hosted server, so there's nothing to install or run.
 - **Sign-in:** OAuth 2.1 ("Sign in with MiningBridge"), discovered automatically. A free account works. You can also use an API key as a Bearer token.
-- **Tools:** 9, all read-only, each with an output schema
+- **Tools:** 13, all read-only, each with an output schema (9 trade and research tools, 4 CM-PATRA patent tools)
 - **Official MCP Registry:** `in.miningbridge/intel`, and listed on [Smithery](https://smithery.ai/servers/miningbridge/intel)
 - **Setup guide:** https://intel.miningbridge.in/connect
 
@@ -28,6 +28,12 @@ This repository holds documentation and client configuration only. The server it
 | `list_reports` | Research reports on critical minerals and rare earths |
 | `read_report` | Reads a published report, or its opening section and contents |
 | `search_evidence` | Searches individual sourced claims on production, processing and trade measures |
+| `get_mineral_patents` | CM-PATRA: reviewed patent families for one India-list mineral, by processing stage, optionally Indian applicants only |
+| `get_technology_gaps` | CM-PATRA: patent families against funded Ministry of Mines R&D projects, per mineral |
+| `track_rd_project_ip` | CM-PATRA: one funded R&D project and patent families on the same minerals |
+| `verify_patent_provenance` | CM-PATRA: why a patent family got its mineral and stage labels, with links to check it at source |
+
+**Coverage.** The trade, risk and sourcing tools cover the 15 commodities that have monthly trade data (listed by `list_commodities`). The website's mineral pages and supply models cover 65 critical minerals. CM-PATRA covers the minerals on India's critical-minerals list; its patent counts are floors for recent Indian-office filings, and recent Indian applications are tracked from the weekly Indian Patent Office Journal.
 
 The free plan gives a daily allowance and summary answers. Pro unlocks full series, numeric risk scores, named counterparties and sourcing briefs.
 
@@ -83,6 +89,8 @@ url = "https://intel.miningbridge.in/api/mcp"
 - "Assess supply concentration risk for cobalt hydroxide, including China exposure."
 - "Screen MiningBridge counterparties for rare-earth refiners in Australia."
 - "List MiningBridge research reports on nickel and summarise the free brief."
+- "Using CM-PATRA, where are India's technology gaps in critical minerals: patents versus funded R&D?"
+- "Who is patenting lithium recycling with an Indian applicant, according to MiningBridge?"
 
 ## Support
 
